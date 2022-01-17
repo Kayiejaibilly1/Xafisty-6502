@@ -1,0 +1,16 @@
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=1642742
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/lime"))()
+
+local w = Library:Window("Made by Xafisty#6502")
+
+w:Button("Anti AFK working", function()
+   print("Printed")
+end)
+
+local vu = game:GetService("VirtualUser")
+   game:GetService("Players").LocalPlayer.Idled:connect(function()
+      vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+      wait(1)
+      vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   end)
